@@ -1,5 +1,13 @@
 function telephoneCheck(str) {
     let phone_number_regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
+    /*
+    * /^(1\s?)?  # optional country code 1 followed by an optional space
+    * (\(\d{3}\)|\d{3})  # area code, either in parentheses or not
+    * [\s\-]?  # optional space or hyphen
+    * \d{3}[\s\-]?  # first three digits, optionally separated by a space or hyphen
+    * \d{4}  # last four digits
+    * $/
+    */
     return phone_number_regex.test(str)
 }
 
